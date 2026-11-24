@@ -1,0 +1,74 @@
+# VeloKV vs Redis, 2026-11-24 12:27 UTC
+CPU:    13th Gen Intel(R) Core(TM) i5-13450HX, 2 logical CPUs available
+Memory: 3.8Gi
+OS:     Ubuntu 22.04.5 LTS, kernel 6.8.0-149-generic
+Redis:  Redis server v=7.2.7 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=5f0253ef270d9928
+Rounds: 5
+
+== velokv/P1
+SET: 154083.20 requests per second, p50=0.167 msec
+GET: 159489.64 requests per second, p50=0.167 msec
+== redis/P1
+SET: 170940.17 requests per second, p50=0.151 msec
+GET: 175131.36 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 1960784.38 requests per second, p50=0.247 msec
+GET: 1785714.25 requests per second, p50=0.199 msec
+== redis/P16
+SET: 2040816.38 requests per second, p50=0.335 msec
+GET: 2272727.25 requests per second, p50=0.279 msec
+== velokv/P1
+SET: 148148.14 requests per second, p50=0.175 msec
+GET: 149925.03 requests per second, p50=0.175 msec
+== redis/P1
+SET: 164203.61 requests per second, p50=0.151 msec
+GET: 167504.19 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2564102.50 requests per second, p50=0.223 msec
+GET: 2500000.00 requests per second, p50=0.167 msec
+== redis/P16
+SET: 2040816.38 requests per second, p50=0.335 msec
+GET: 2272727.25 requests per second, p50=0.279 msec
+== velokv/P1
+SET: 151057.41 requests per second, p50=0.167 msec
+GET: 150829.56 requests per second, p50=0.175 msec
+== redis/P1
+SET: 170357.75 requests per second, p50=0.151 msec
+GET: 168918.92 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2564102.50 requests per second, p50=0.215 msec
+GET: 2439024.25 requests per second, p50=0.175 msec
+== redis/P16
+SET: 1538461.62 requests per second, p50=0.423 msec
+GET: 2272727.25 requests per second, p50=0.271 msec
+== velokv/P1
+SET: 158982.52 requests per second, p50=0.167 msec
+GET: 155763.23 requests per second, p50=0.167 msec
+== redis/P1
+SET: 176056.33 requests per second, p50=0.151 msec
+GET: 174520.06 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2631579.00 requests per second, p50=0.207 msec
+GET: 2439024.25 requests per second, p50=0.175 msec
+== redis/P16
+SET: 1515151.50 requests per second, p50=0.431 msec
+GET: 2325581.25 requests per second, p50=0.263 msec
+== velokv/P1
+SET: 156985.86 requests per second, p50=0.167 msec
+GET: 153139.36 requests per second, p50=0.175 msec
+== redis/P1
+SET: 172711.58 requests per second, p50=0.151 msec
+GET: 170068.03 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2777778.00 requests per second, p50=0.231 msec
+GET: 2564102.50 requests per second, p50=0.167 msec
+== redis/P16
+SET: 2127659.75 requests per second, p50=0.319 msec
+GET: 2380952.50 requests per second, p50=0.255 msec
+
+| Test                    | VeloKV (ops/sec) | Redis (ops/sec) | VeloKV / Redis |
+| ----------------------- | ---------------- | --------------- | -------------- |
+| SET, 50 clients         |           154083 |          170940 |           0.90 |
+| GET, 50 clients         |           153139 |          170068 |           0.90 |
+| SET, 50 clients, P=16   |          2564102 |         2040816 |           1.26 |
+| GET, 50 clients, P=16   |          2439024 |         2272727 |           1.07 |

@@ -1,0 +1,145 @@
+# VeloKV vs Redis, 2026-11-24 12:29 UTC
+CPU:    13th Gen Intel(R) Core(TM) i5-13450HX, 2 logical CPUs available
+Memory: 3.8Gi
+OS:     Ubuntu 22.04.5 LTS, kernel 6.8.0-149-generic
+Redis:  Redis server v=7.2.7 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=5f0253ef270d9928
+Rounds: 5
+
+== velokv/P1
+SET: 154559.50 requests per second, p50=0.167 msec
+GET: 151975.69 requests per second, p50=0.175 msec
+== redis/P1
+SET: 169779.30 requests per second, p50=0.151 msec
+GET: 166666.66 requests per second, p50=0.159 msec
+== velokv/P16
+SET: 2777778.00 requests per second, p50=0.191 msec
+GET: 2380952.50 requests per second, p50=0.175 msec
+== redis/P16
+SET: 2083333.38 requests per second, p50=0.319 msec
+GET: 2439024.25 requests per second, p50=0.255 msec
+== velokv/R1
+SET: 155199.17 requests per second, p50=0.167 msec
+GET: 155925.16 requests per second, p50=0.167 msec
+== velokv/R16
+SET: 832639.50 requests per second, p50=1.031 msec
+GET: 951474.81 requests per second, p50=0.839 msec
+== redis/R1
+SET: 173310.23 requests per second, p50=0.143 msec
+GET: 173812.28 requests per second, p50=0.143 msec
+== redis/R16
+SET: 1183431.88 requests per second, p50=0.567 msec
+GET: 1420454.50 requests per second, p50=0.519 msec
+== velokv/P1
+SET: 152671.77 requests per second, p50=0.167 msec
+GET: 153139.36 requests per second, p50=0.175 msec
+== redis/P1
+SET: 170940.17 requests per second, p50=0.151 msec
+GET: 170940.17 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2857142.75 requests per second, p50=0.191 msec
+GET: 2564102.50 requests per second, p50=0.175 msec
+== redis/P16
+SET: 2127659.75 requests per second, p50=0.319 msec
+GET: 2439024.25 requests per second, p50=0.271 msec
+== velokv/R1
+SET: 157150.34 requests per second, p50=0.159 msec
+GET: 153846.16 requests per second, p50=0.167 msec
+== velokv/R16
+SET: 714796.25 requests per second, p50=1.119 msec
+GET: 814332.19 requests per second, p50=0.983 msec
+== redis/R1
+SET: 179104.48 requests per second, p50=0.143 msec
+GET: 175336.06 requests per second, p50=0.143 msec
+== redis/R16
+SET: 1168224.25 requests per second, p50=0.583 msec
+GET: 1418439.75 requests per second, p50=0.511 msec
+== velokv/P1
+SET: 154559.50 requests per second, p50=0.167 msec
+GET: 149253.73 requests per second, p50=0.175 msec
+== redis/P1
+SET: 167504.19 requests per second, p50=0.151 msec
+GET: 169779.30 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2857142.75 requests per second, p50=0.223 msec
+GET: 2500000.00 requests per second, p50=0.167 msec
+== redis/P16
+SET: 2040816.38 requests per second, p50=0.327 msec
+GET: 2500000.00 requests per second, p50=0.247 msec
+== velokv/R1
+SET: 161812.30 requests per second, p50=0.159 msec
+GET: 155118.92 requests per second, p50=0.167 msec
+== velokv/R16
+SET: 684931.50 requests per second, p50=1.143 msec
+GET: 824402.25 requests per second, p50=0.975 msec
+== redis/R1
+SET: 177200.23 requests per second, p50=0.143 msec
+GET: 177200.23 requests per second, p50=0.143 msec
+== redis/R16
+SET: 1196172.25 requests per second, p50=0.575 msec
+GET: 1418439.75 requests per second, p50=0.519 msec
+== velokv/P1
+SET: 156494.52 requests per second, p50=0.167 msec
+GET: 150602.42 requests per second, p50=0.175 msec
+== redis/P1
+SET: 170357.75 requests per second, p50=0.151 msec
+GET: 169779.30 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2777778.00 requests per second, p50=0.207 msec
+GET: 2439024.25 requests per second, p50=0.167 msec
+== redis/P16
+SET: 1754386.00 requests per second, p50=0.359 msec
+GET: 2272727.25 requests per second, p50=0.279 msec
+== velokv/R1
+SET: 162162.16 requests per second, p50=0.159 msec
+GET: 153217.58 requests per second, p50=0.167 msec
+== velokv/R16
+SET: 664451.81 requests per second, p50=1.191 msec
+GET: 762195.12 requests per second, p50=1.031 msec
+== redis/R1
+SET: 138185.17 requests per second, p50=0.207 msec
+GET: 174418.61 requests per second, p50=0.151 msec
+== redis/R16
+SET: 1052631.62 requests per second, p50=0.671 msec
+GET: 1410437.25 requests per second, p50=0.511 msec
+== velokv/P1
+SET: 151745.08 requests per second, p50=0.175 msec
+GET: 147492.62 requests per second, p50=0.175 msec
+== redis/P1
+SET: 171526.58 requests per second, p50=0.151 msec
+GET: 167504.19 requests per second, p50=0.151 msec
+== velokv/P16
+SET: 2702702.75 requests per second, p50=0.167 msec
+GET: 2380952.50 requests per second, p50=0.175 msec
+== redis/P16
+SET: 1818181.88 requests per second, p50=0.351 msec
+GET: 2380952.50 requests per second, p50=0.279 msec
+== velokv/R1
+SET: 157315.16 requests per second, p50=0.167 msec
+GET: 150905.44 requests per second, p50=0.175 msec
+== velokv/R16
+SET: 675219.50 requests per second, p50=1.167 msec
+GET: 809061.50 requests per second, p50=0.991 msec
+== redis/R1
+SET: 176782.55 requests per second, p50=0.143 msec
+GET: 168634.06 requests per second, p50=0.151 msec
+== redis/R16
+SET: 1184834.12 requests per second, p50=0.575 msec
+GET: 1414427.12 requests per second, p50=0.519 msec
+
+README commands (-n 100000, one key)
+
+| Test                    | VeloKV (ops/sec) | Redis (ops/sec) | VeloKV / Redis |
+| ----------------------- | ---------------- | --------------- | -------------- |
+| SET, 50 clients         |           154560 |          170358 |           0.91 |
+| GET, 50 clients         |           150602 |          169779 |           0.89 |
+| SET, 50 clients, P=16   |          2777778 |         2040816 |           1.36 |
+| GET, 50 clients, P=16   |          2439024 |         2439024 |           1.00 |
+
+Random keys (-r 1000000; -n 300000, or 1000000 with -P 16)
+
+| Test                    | VeloKV (ops/sec) | Redis (ops/sec) | VeloKV / Redis |
+| ----------------------- | ---------------- | --------------- | -------------- |
+| SET, 50 clients         |           157315 |          176783 |           0.89 |
+| GET, 50 clients         |           153846 |          174419 |           0.88 |
+| SET, 50 clients, P=16   |           684932 |         1183432 |           0.58 |
+| GET, 50 clients, P=16   |           814332 |         1418440 |           0.57 |
