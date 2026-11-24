@@ -1,0 +1,40 @@
+# Builds VeloKV and runs every test (GoogleTest unit tests and the redis-cli
+# integration test) on each push and pull request: once as an optimized build,
+# once under AddressSanitizer + UndefinedBehaviorSanitizer. Warnings are errors.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: release
+            cmake-flags: -DCMAKE_BUILD_TYPE=Release
+          - name: asan-ubsan
+            cmake-flags: -DCMAKE_BUILD_TYPE=Debug -DVELOKV_SANITIZE=ON
+
+    steps:
+      - uses: actions/checkout@v5
+
+      # redis-cli drives the integration test; VeloKV itself never uses Redis.
+      - name: Install redis-cli
+        run: sudo apt-get update && sudo apt-get install -y redis-tools
+
+      - name: Configure
+        run: cmake -S . -B build ${{ matrix.cmake-flags }} -DVELOKV_WERROR=ON
+
+      - name: Build
+        run: cmake --build build -j "$(nproc)"
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
